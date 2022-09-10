@@ -35,6 +35,8 @@ app.get("/", (req, res) => {
 });
 
 require("./app/routes/transaksi.routes")(app);
+require("./app/routes/app_routes")(app);
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
