@@ -10,7 +10,7 @@ module.exports = app => {
     
     // Create a new transaksi
     //route
-    router.post("/login", passport.authenticate('local', { failureRedirect: '/login' }), user_controller.login)
+    router.post("/login", user_controller.login)
 
     router.post("/register", user_controller.registerValidate, user_controller.register)
 

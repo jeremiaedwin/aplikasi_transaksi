@@ -53,12 +53,7 @@ exports.login = (req, res) => {
     }
     session = req.session;
     session.userid = req.body.username;
-    UserModel.findOne({ username: req.body.username }, function (err, user) {
-        res.render('login')
-        if (user.role == "admin") {
-            res.redirect("/dashboard");
-        } else {
-            res.redirect("/user");
-        }
+    Akun.findOne({ username: req.body.username }, function (err, user) {
+        console.log('Berhasil')
     })
 };

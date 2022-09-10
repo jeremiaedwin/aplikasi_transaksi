@@ -4,7 +4,8 @@ module.exports = mongoose => {
       "akun",
       mongoose.Schema(
         {
-            username: String,
+            username : String,
+            email: String,
             password: String,
             roles: {
             type : String,
