@@ -31,7 +31,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     const data_transaksi = req.query._id;
     var condition = data_transaksi? { data_transaksi: { $regex: new RegExp(_id), $options: "i" } } : {};
-    Transaksi.find(condition)
+    Transaksi.findAll(condition)
       .then(data => {
         res.send(data);
       })
