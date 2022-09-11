@@ -10,7 +10,8 @@ module.exports = mongoose => {
           },
           tipe_penjualan: {
             type : String,
-            enum : ["Dine In", "Take Away"]
+            enum : ["Dine In", "Take Away"],
+            default : "Dine In"
           }, 
           harga: Number
         },

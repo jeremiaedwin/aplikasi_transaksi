@@ -12,7 +12,7 @@ exports.create = (req, res) => {
         nama_produk: req.body.nama_produk,
         status_pembayaran : req.body.status_pembayaran,
         tipe_penjualan: req.body.tipe_penjualan,
-        harga: req.body.number
+        harga: req.body.harga
     });
     // Stransaksi in the database
     _transaksi
@@ -31,7 +31,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     const data_transaksi = req.query._id;
     var condition = data_transaksi? { data_transaksi: { $regex: new RegExp(_id), $options: "i" } } : {};
-    Transaksi.findAll(condition)
+    Transaksi.find(condition)
       .then(data => {
         res.send(data);
       })

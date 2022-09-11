@@ -54,6 +54,6 @@ exports.login = (req, res) => {
     session = req.session;
     session.userid = req.body.username;
     Akun.findOne({ username: req.body.username }, function (err, user) {
-        console.log('Berhasil')
+        res.send(session)
     })
 };

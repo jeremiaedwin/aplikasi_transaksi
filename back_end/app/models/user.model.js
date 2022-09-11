@@ -8,8 +8,9 @@ module.exports = mongoose => {
             email: String,
             password: String,
             roles: {
-            type : String,
-            enum : ["user", "admin"],
+                type : String,
+                enum : ["user", "admin"],
+                default : 'user'
             },
         }
         ).plugin(passportLocalMongoose)
